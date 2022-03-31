@@ -7,8 +7,13 @@ body {
     font-family: 'Oswald', sans-serif;  
     background-color: rgb(139, 139, 226); 
 } 
-
 /*****************/ 
+
+/*********VARIABLES*******/ 
+:root { 
+    --color-head: rgb(197, 160, 233)
+}
+/*************************/
 
 /******BASE*******/ 
 header { 
@@ -23,19 +28,19 @@ header {
     width: 50%;
 
     top: 0;
-    background-color: rgb(197, 160, 233);
+    background: var(--color-head);
 
     padding: 1rem; 
 
     border: black solid
 }   
 
-body, main { 
+body, main, .body, #about{ 
     display: flex; 
     align-items: center; 
     justify-content: center; 
     flex-flow: column;
-}
+} 
 
 .geral{ 
     position: relative;
@@ -51,7 +56,7 @@ body, main {
 }  
 
 .container{ 
-    width: 100%; 
+    width: 70%; 
     padding: 1rem;
     border: black solid; 
 
@@ -65,23 +70,12 @@ body, main {
     margin-bottom: 2rem;
 } 
 
-.body { 
-    display: flex; 
-    flex-flow: column;
-    align-items: center; 
-    justify-content: center;
-} 
-
-.button { 
-    display: block; 
-    height: 2rem;
-}
-
 .topics { 
     width: 23.45rem; 
     font-size: 1rem;;
-}
+} 
 
+/**********HEADER**********/
 #container-logo { 
     width: 5rem; 
 }
@@ -90,8 +84,19 @@ header div .icon-computer-svgrepo-com {
     font-size: 5rem; 
     color:rgb(90, 90, 235)
 } 
+/***************************/ 
 
-body main .image { 
+/*********BODY*************/ 
+.body { 
+    visibility: hidden; 
+    opacity: 0; 
+    height: 250px
+}
+/**************************/
+
+
+/**********IMAGE***********/
+.image { 
     width: fit-content; 
     display: flex; 
     justify-content: center; 
@@ -99,25 +104,72 @@ body main .image {
     border: black solid
 } 
 
-body main .image img { 
+.image img { 
     width: 15rem; 
     height: 15rem;
     margin: 0; 
     border-radius: 100%;
 } 
+/**************************/
+
+/************ABOUT*************/
 
 #about { 
-    width: 80%; 
     text-align: justify; 
     margin-top: 2rem;
-} 
+    
+    display: none;
 
+    transition: 0.5s; 
+
+    gap: 1.5rem; 
+}  
+
+#about.show { 
+    visibility: visible; 
+    opacity: 1; 
+    width: 80%;  
+
+    display: flex;
+}
+/*****************************/
+
+/**********DIVIDER************/
 .divider { 
     width: 70%; 
     height: 2px; 
     background: white; 
     opacity: 0.3;
 } 
+/*****************************/ 
+
+/**********BUTTON************/ 
+.button { 
+    border: black solid; 
+    border-radius: 100%; 
+
+    width: 1.5rem; 
+    height: 1.5rem;
+
+    padding: .5rem; 
+
+    background: var(--color-head); 
+
+    margin-bottom: 1rem; 
+
+    cursor: pointer;
+
+    transition: 0.5s;
+}
+
+.button i { 
+    font-size: 1.5rem;
+} 
+
+.button:hover { 
+    background-color: rgb(175, 117, 230)
+}
+/****************************/
 
 /****RESPONSIVE*****/ 
 
